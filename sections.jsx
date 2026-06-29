@@ -373,11 +373,7 @@ const HeroSection = ({ t, accent = '#06b6d4' }) => {
           </div>
         </div>
 
-<div className="two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: '80px', alignItems: 'start' }}>
-          {/* Left: bio */}
-          <div>
-            <SectionHead label={t.about.label} title={t.about.heading} accent={accent} theme="light" />
-            {t.about.bio.map        <GRCAssessmentPanel t={t} accent={h} />
+        <GRCAssessmentPanel t={t} accent={h} />
       </div>
 
       {/* Scroll indicator */}
@@ -402,10 +398,10 @@ const AboutSection = ({ t, accent }) => {
     <section id="about" data-screen-label="02 About" style={{ position: 'relative', padding: '120px 0', background: '#f7f9fb', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle,rgba(0,0,0,0.05) 1px,transparent 1px)', backgroundSize: '48px 48px', pointerEvents: 'none', opacity: 0.4 }} />
       <div style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 52px', position: 'relative', zIndex: 2 }}>
+        <SectionHead label={t.about.label} title={t.about.heading} accent={accent} theme="light" />
         <div className="two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: '80px', alignItems: 'start' }}>
           {/* Left: bio */}
           <div>
-            <SectionHead label={t.about.label} title={t.about.heading} accent={accent} theme="light" />
             {t.about.bio.map((p, i) =>
             <Reveal key={i} delay={i * 0.09}>
                 <p style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontSize: '16px', color: '#284252', lineHeight: 1.8, marginBottom: '22px' }}>{p}</p>
