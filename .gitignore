@@ -2,3 +2,5 @@ node_modules/
 dist/
 .image-slots.state.json
 .thumbnail
+screenshots/
+uploads/
