@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["react/jsx-dev-runtime"], factory);
+    define([], factory);
   } else if (typeof exports !== "undefined") {
-    factory(require("react/jsx-dev-runtime"));
+    factory();
   } else {
     var mod = {
       exports: {}
     };
-    factory(global.jsxDevRuntime);
+    factory();
     global.app = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_jsxDevRuntime) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function () {
   "use strict";
 
   // app.jsx — Main app, translations, navbar, tweaks
@@ -616,7 +616,7 @@
       };
     }, [open, onClose]);
     if (!open) return null;
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/React.createElement("div", {
       onClick: onClose,
       style: {
         position: 'fixed',
@@ -628,291 +628,268 @@
         alignItems: 'center',
         justifyContent: 'center',
         padding: '24px'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      onClick: e => e.stopPropagation(),
+      style: {
+        background: '#0a1829',
+        border: `1px solid rgba(${rgb},0.18)`,
+        borderRadius: '16px',
+        width: 'min(680px,95vw)',
+        maxHeight: '88vh',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        boxShadow: `0 32px 80px rgba(0,0,0,0.6), 0 0 40px rgba(${rgb},0.06)`,
+        animation: 'fadeUp 0.28s ease'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '20px 28px',
+        borderBottom: `1px solid rgba(${rgb},0.09)`
+      }
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'IBM Plex Sans',sans-serif",
+        fontWeight: 700,
+        fontSize: '17px',
+        color: '#daeef8'
+      }
+    }, "Curriculum Vitae"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'JetBrains Mono',monospace",
+        fontSize: '9px',
+        color: `rgba(${rgb},0.35)`,
+        letterSpacing: '1.2px',
+        marginTop: '3px',
+        padding: '3px 8px',
+        background: `rgba(${rgb},0.06)`,
+        border: `1px solid rgba(${rgb},0.14)`,
+        borderRadius: '4px',
+        display: 'inline-block'
+      }
+    }, "To enable PDF download: add your CV file as ", /*#__PURE__*/React.createElement("code", {
+      style: {
+        color: accent
+      }
+    }, "CV_Sebastian_Garay.pdf"), " to the project root"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'JetBrains Mono',monospace",
+        fontSize: '10px',
+        color: `rgba(${rgb},0.4)`,
+        letterSpacing: '1.5px',
+        marginTop: '3px'
+      }
+    }, "Sebastian Garay · GRC & Behavioral Security")), /*#__PURE__*/React.createElement("button", {
+      onClick: onClose,
+      style: {
+        width: '32px',
+        height: '32px',
+        borderRadius: '8px',
+        background: `rgba(${rgb},0.07)`,
+        border: `1px solid rgba(${rgb},0.14)`,
+        color: `rgba(${rgb},0.6)`,
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transition: 'all 0.2s'
       },
-      children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-        onClick: e => e.stopPropagation(),
-        style: {
-          background: '#0a1829',
-          border: `1px solid rgba(${rgb},0.18)`,
-          borderRadius: '16px',
-          width: 'min(680px,95vw)',
-          maxHeight: '88vh',
-          overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column',
-          boxShadow: `0 32px 80px rgba(0,0,0,0.6), 0 0 40px rgba(${rgb},0.06)`,
-          animation: 'fadeUp 0.28s ease'
-        },
-        children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-          style: {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '20px 28px',
-            borderBottom: `1px solid rgba(${rgb},0.09)`
-          },
-          children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-            children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-              style: {
-                fontFamily: "'IBM Plex Sans',sans-serif",
-                fontWeight: 700,
-                fontSize: '17px',
-                color: '#daeef8'
-              },
-              children: "Curriculum Vitae"
-            }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-              style: {
-                fontFamily: "'JetBrains Mono',monospace",
-                fontSize: '9px',
-                color: `rgba(${rgb},0.35)`,
-                letterSpacing: '1.2px',
-                marginTop: '3px',
-                padding: '3px 8px',
-                background: `rgba(${rgb},0.06)`,
-                border: `1px solid rgba(${rgb},0.14)`,
-                borderRadius: '4px',
-                display: 'inline-block'
-              },
-              children: ["To enable PDF download: add your CV file as ", /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("code", {
-                style: {
-                  color: accent
-                },
-                children: "CV_Sebastian_Garay.pdf"
-              }, void 0, false), " to the project root"]
-            }, void 0, true), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-              style: {
-                fontFamily: "'JetBrains Mono',monospace",
-                fontSize: '10px',
-                color: `rgba(${rgb},0.4)`,
-                letterSpacing: '1.5px',
-                marginTop: '3px'
-              },
-              children: "Sebastian Garay · GRC & Behavioral Security"
-            }, void 0, false)]
-          }, void 0, true), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("button", {
-            onClick: onClose,
-            style: {
-              width: '32px',
-              height: '32px',
-              borderRadius: '8px',
-              background: `rgba(${rgb},0.07)`,
-              border: `1px solid rgba(${rgb},0.14)`,
-              color: `rgba(${rgb},0.6)`,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'all 0.2s'
-            },
-            onMouseEnter: e => {
-              e.currentTarget.style.background = `rgba(${rgb},0.14)`;
-              e.currentTarget.style.color = accent;
-            },
-            onMouseLeave: e => {
-              e.currentTarget.style.background = `rgba(${rgb},0.07)`;
-              e.currentTarget.style.color = `rgba(${rgb},0.6)`;
-            },
-            children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("svg", {
-              width: "14",
-              height: "14",
-              viewBox: "0 0 16 16",
-              fill: "none",
-              stroke: "currentColor",
-              strokeWidth: "2",
-              strokeLinecap: "round",
-              children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("path", {
-                d: "M2 2l12 12M14 2L2 14"
-              }, void 0, false)
-            }, void 0, false)
-          }, void 0, false)]
-        }, void 0, true), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-          style: {
-            flexGrow: 1,
-            overflowY: 'auto',
-            padding: '28px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '20px'
-          },
-          children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-            style: {
-              padding: '24px',
-              background: '#071018',
-              borderRadius: '10px',
-              border: `1px solid rgba(${rgb},0.08)`
-            },
-            children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-              style: {
-                fontFamily: "'Syne',sans-serif",
-                fontWeight: 700,
-                fontSize: '26px',
-                color: '#eaf6fb',
-                marginBottom: '6px'
-              },
-              children: "Sebastian Garay"
-            }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-              style: {
-                fontFamily: "'JetBrains Mono',monospace",
-                fontSize: '11px',
-                color: accent,
-                letterSpacing: '2px',
-                textTransform: 'uppercase',
-                marginBottom: '14px'
-              },
-              children: "GRC & Behavioral Security Specialist"
-            }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-              style: {
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '16px'
-              },
-              children: ['Buenos Aires, Argentina · AMBA', 'linkedin.com/in/sebastian-garay', 'credly.com/users/sebastian-garay.tech'].map(c => /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("span", {
-                style: {
-                  fontFamily: "'IBM Plex Sans',sans-serif",
-                  fontSize: '13px',
-                  color: '#4a7a92'
-                },
-                children: c
-              }, c, false))
-            }, void 0, false)]
-          }, void 0, true), [{
-            title: 'Education',
-            items: ['B.Sc. Cyberdefense — FADENA/UNDEF (In Progress)', 'Higher Technical Degree in Social Psychology (In Progress)']
-          }, {
-            title: 'Certifications',
-            items: ['Ethical Hacker — Cisco (Jun 2026)', 'Cybersecurity Certificate — IBM SkillsBuild', 'GRC & Data Privacy · Cloud Security · Incident Response · Vulnerability Mgmt']
-          }, {
-            title: 'Expertise',
-            items: ['Governance, Risk & Compliance (GRC)', 'ISO 27001 · COBIT 2019', 'Behavioral Security · AI Risk Governance', 'Risk Assessment & Gap Analysis']
-          }].map(s => /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-            style: {
-              padding: '20px 24px',
-              background: '#071018',
-              borderRadius: '10px',
-              border: `1px solid rgba(${rgb},0.07)`
-            },
-            children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-              style: {
-                fontFamily: "'JetBrains Mono',monospace",
-                fontSize: '9px',
-                color: `rgba(${rgb},0.4)`,
-                letterSpacing: '2.5px',
-                textTransform: 'uppercase',
-                marginBottom: '12px'
-              },
-              children: s.title
-            }, void 0, false), s.items.map(item => /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-              style: {
-                fontFamily: "'IBM Plex Sans',sans-serif",
-                fontSize: '14px',
-                color: '#7aafc8',
-                marginBottom: '6px',
-                paddingLeft: '12px',
-                borderLeft: `2px solid rgba(${rgb},0.15)`
-              },
-              children: item
-            }, item, false))]
-          }, s.title, true)), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-            style: {
-              padding: '16px 24px',
-              background: `rgba(${rgb},0.04)`,
-              borderRadius: '10px',
-              border: `1px dashed rgba(${rgb},0.15)`,
-              textAlign: 'center'
-            },
-            children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-              style: {
-                fontFamily: "'JetBrains Mono',monospace",
-                fontSize: '11px',
-                color: `rgba(${rgb},0.35)`,
-                letterSpacing: '1px'
-              },
-              children: "Full CV available as PDF — add your file to enable download"
-            }, void 0, false)
-          }, void 0, false)]
-        }, void 0, true), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-          style: {
-            padding: '18px 28px',
-            borderTop: `1px solid rgba(${rgb},0.09)`,
-            display: 'flex',
-            gap: '12px',
-            justifyContent: 'flex-end'
-          },
-          children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("button", {
-            onClick: onClose,
-            style: {
-              padding: '10px 20px',
-              background: 'transparent',
-              border: `1px solid rgba(${rgb},0.18)`,
-              borderRadius: '7px',
-              color: `rgba(${rgb},0.55)`,
-              fontFamily: "'IBM Plex Sans',sans-serif",
-              fontWeight: 600,
-              fontSize: '13px',
-              cursor: 'pointer',
-              transition: 'all 0.2s'
-            },
-            onMouseEnter: e => {
-              e.currentTarget.style.borderColor = `rgba(${rgb},0.35)`;
-              e.currentTarget.style.color = accent;
-            },
-            onMouseLeave: e => {
-              e.currentTarget.style.borderColor = `rgba(${rgb},0.18)`;
-              e.currentTarget.style.color = `rgba(${rgb},0.55)`;
-            },
-            onMouseDown: addRipple,
-            children: "Cerrar"
-          }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("a", {
-            href: "CV_Sebastian_Garay.pdf",
-            download: true,
-            style: {
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '10px 22px',
-              background: accent,
-              color: '#020810',
-              fontFamily: "'IBM Plex Sans',sans-serif",
-              fontWeight: 700,
-              fontSize: '13px',
-              borderRadius: '7px',
-              textDecoration: 'none',
-              boxShadow: `0 0 18px rgba(${rgb},0.3)`,
-              transition: 'all 0.2s',
-              position: 'relative',
-              overflow: 'hidden'
-            },
-            onMouseEnter: e => {
-              e.currentTarget.style.boxShadow = `0 0 28px rgba(${rgb},0.5)`;
-              e.currentTarget.style.transform = 'translateY(-1px)';
-            },
-            onMouseLeave: e => {
-              e.currentTarget.style.boxShadow = `0 0 18px rgba(${rgb},0.3)`;
-              e.currentTarget.style.transform = '';
-            },
-            onMouseDown: addRipple,
-            children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("svg", {
-              width: "12",
-              height: "12",
-              viewBox: "0 0 16 16",
-              fill: "none",
-              stroke: "currentColor",
-              strokeWidth: "2.2",
-              strokeLinecap: "round",
-              children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("path", {
-                d: "M8 2v8M5 7l3 3 3-3"
-              }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("rect", {
-                x: "2",
-                y: "11",
-                width: "12",
-                height: "3",
-                rx: "1"
-              }, void 0, false)]
-            }, void 0, true), "Descargar PDF"]
-          }, void 0, true)]
-        }, void 0, true)]
-      }, void 0, true)
-    }, void 0, false);
+      onMouseEnter: e => {
+        e.currentTarget.style.background = `rgba(${rgb},0.14)`;
+        e.currentTarget.style.color = accent;
+      },
+      onMouseLeave: e => {
+        e.currentTarget.style.background = `rgba(${rgb},0.07)`;
+        e.currentTarget.style.color = `rgba(${rgb},0.6)`;
+      }
+    }, /*#__PURE__*/React.createElement("svg", {
+      width: "14",
+      height: "14",
+      viewBox: "0 0 16 16",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M2 2l12 12M14 2L2 14"
+    })))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        flexGrow: 1,
+        overflowY: 'auto',
+        padding: '28px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: '24px',
+        background: '#071018',
+        borderRadius: '10px',
+        border: `1px solid rgba(${rgb},0.08)`
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'Syne',sans-serif",
+        fontWeight: 700,
+        fontSize: '26px',
+        color: '#eaf6fb',
+        marginBottom: '6px'
+      }
+    }, "Sebastian Garay"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'JetBrains Mono',monospace",
+        fontSize: '11px',
+        color: accent,
+        letterSpacing: '2px',
+        textTransform: 'uppercase',
+        marginBottom: '14px'
+      }
+    }, "GRC & Behavioral Security Specialist"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '16px'
+      }
+    }, ['Buenos Aires, Argentina · AMBA', 'linkedin.com/in/sebastian-garay', 'credly.com/users/sebastian-garay.tech'].map(c => /*#__PURE__*/React.createElement("span", {
+      key: c,
+      style: {
+        fontFamily: "'IBM Plex Sans',sans-serif",
+        fontSize: '13px',
+        color: '#4a7a92'
+      }
+    }, c)))), [{
+      title: 'Education',
+      items: ['B.Sc. Cyberdefense — FADENA/UNDEF (In Progress)', 'Higher Technical Degree in Social Psychology (In Progress)']
+    }, {
+      title: 'Certifications',
+      items: ['Ethical Hacker — Cisco (Jun 2026)', 'Cybersecurity Certificate — IBM SkillsBuild', 'GRC & Data Privacy · Cloud Security · Incident Response · Vulnerability Mgmt']
+    }, {
+      title: 'Expertise',
+      items: ['Governance, Risk & Compliance (GRC)', 'ISO 27001 · COBIT 2019', 'Behavioral Security · AI Risk Governance', 'Risk Assessment & Gap Analysis']
+    }].map(s => /*#__PURE__*/React.createElement("div", {
+      key: s.title,
+      style: {
+        padding: '20px 24px',
+        background: '#071018',
+        borderRadius: '10px',
+        border: `1px solid rgba(${rgb},0.07)`
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'JetBrains Mono',monospace",
+        fontSize: '9px',
+        color: `rgba(${rgb},0.4)`,
+        letterSpacing: '2.5px',
+        textTransform: 'uppercase',
+        marginBottom: '12px'
+      }
+    }, s.title), s.items.map(item => /*#__PURE__*/React.createElement("div", {
+      key: item,
+      style: {
+        fontFamily: "'IBM Plex Sans',sans-serif",
+        fontSize: '14px',
+        color: '#7aafc8',
+        marginBottom: '6px',
+        paddingLeft: '12px',
+        borderLeft: `2px solid rgba(${rgb},0.15)`
+      }
+    }, item)))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: '16px 24px',
+        background: `rgba(${rgb},0.04)`,
+        borderRadius: '10px',
+        border: `1px dashed rgba(${rgb},0.15)`,
+        textAlign: 'center'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'JetBrains Mono',monospace",
+        fontSize: '11px',
+        color: `rgba(${rgb},0.35)`,
+        letterSpacing: '1px'
+      }
+    }, "Full CV available as PDF — add your file to enable download"))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: '18px 28px',
+        borderTop: `1px solid rgba(${rgb},0.09)`,
+        display: 'flex',
+        gap: '12px',
+        justifyContent: 'flex-end'
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: onClose,
+      style: {
+        padding: '10px 20px',
+        background: 'transparent',
+        border: `1px solid rgba(${rgb},0.18)`,
+        borderRadius: '7px',
+        color: `rgba(${rgb},0.55)`,
+        fontFamily: "'IBM Plex Sans',sans-serif",
+        fontWeight: 600,
+        fontSize: '13px',
+        cursor: 'pointer',
+        transition: 'all 0.2s'
+      },
+      onMouseEnter: e => {
+        e.currentTarget.style.borderColor = `rgba(${rgb},0.35)`;
+        e.currentTarget.style.color = accent;
+      },
+      onMouseLeave: e => {
+        e.currentTarget.style.borderColor = `rgba(${rgb},0.18)`;
+        e.currentTarget.style.color = `rgba(${rgb},0.55)`;
+      },
+      onMouseDown: addRipple
+    }, "Cerrar"), /*#__PURE__*/React.createElement("a", {
+      href: "CV_Sebastian_Garay.pdf",
+      download: true,
+      style: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '8px',
+        padding: '10px 22px',
+        background: accent,
+        color: '#020810',
+        fontFamily: "'IBM Plex Sans',sans-serif",
+        fontWeight: 700,
+        fontSize: '13px',
+        borderRadius: '7px',
+        textDecoration: 'none',
+        boxShadow: `0 0 18px rgba(${rgb},0.3)`,
+        transition: 'all 0.2s',
+        position: 'relative',
+        overflow: 'hidden'
+      },
+      onMouseEnter: e => {
+        e.currentTarget.style.boxShadow = `0 0 28px rgba(${rgb},0.5)`;
+        e.currentTarget.style.transform = 'translateY(-1px)';
+      },
+      onMouseLeave: e => {
+        e.currentTarget.style.boxShadow = `0 0 18px rgba(${rgb},0.3)`;
+        e.currentTarget.style.transform = '';
+      },
+      onMouseDown: addRipple
+    }, /*#__PURE__*/React.createElement("svg", {
+      width: "12",
+      height: "12",
+      viewBox: "0 0 16 16",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2.2",
+      strokeLinecap: "round"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M8 2v8M5 7l3 3 3-3"
+    }), /*#__PURE__*/React.createElement("rect", {
+      x: "2",
+      y: "11",
+      width: "12",
+      height: "3",
+      rx: "1"
+    })), "Descargar PDF"))));
   };
 
   // ── Navbar ─────────────────────────────────────────────────────────────────────
@@ -1014,327 +991,305 @@
       transition: 'color 0.18s, background 0.18s, transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s, text-shadow 0.18s'
     });
     const NAV_ITEMS = [['about', 'about'], ['education', 'education'], ['projects', 'projects'], ['blog', 'blog'], ['contact', 'contact']];
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(_jsxDevRuntime.Fragment, {
-      children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("nav", {
-        style: {
-          position: 'fixed',
-          top: '2px',
-          left: 0,
-          right: 0,
-          zIndex: 900,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '0 52px',
-          height: '60px',
-          background: scrolled ? 'rgba(5,12,19,0.92)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(16px)' : 'none',
-          borderBottom: scrolled ? `1px solid rgba(${rgb},0.08)` : '1px solid transparent',
-          transition: 'all 0.35s ease'
-        },
-        children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("a", {
-          href: "#hero",
-          onClick: e => {
-            e.preventDefault();
-            window.scrollTo({
-              top: 0,
-              behavior: 'smooth'
-            });
-          },
-          style: {
-            fontFamily: "'IBM Plex Sans',sans-serif",
-            fontWeight: 700,
-            fontSize: '22px',
-            color: inHero ? '#e2e8f0' : accent,
-            textDecoration: 'none',
-            letterSpacing: '-0.5px',
-            textShadow: inHero ? `0 0 14px rgba(${rgb},0.5)` : `0 0 20px rgba(${rgb},0.4)`,
-            transition: 'color 0.3s ease, text-shadow 0.3s ease'
-          },
-          children: "SG"
-        }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-          style: {
-            display: 'flex',
-            alignItems: 'center',
-            gap: '4px'
-          },
-          children: [NAV_ITEMS.map(([id, key]) => /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("a", {
-            href: `#${id}`,
-            onMouseDown: addRipple,
-            onClick: e => {
-              e.preventDefault();
-              scrollTo(id);
-            },
-            style: linkStyle(id),
-            onMouseEnter: e => {
-              if (activeId !== id) {
-                e.currentTarget.style.color = accent;
-                e.currentTarget.style.background = `rgba(${rgb},0.08)`;
-                e.currentTarget.style.textShadow = `0 0 12px rgba(${rgb},0.35)`;
-                e.currentTarget.style.boxShadow = `inset 0 0 0 1px rgba(${rgb},0.12)`;
-              }
-              e.currentTarget.style.transform = 'translateY(-2px) scale(1.04)';
-            },
-            onMouseLeave: e => {
-              if (activeId !== id) {
-                e.currentTarget.style.color = '#4a7a92';
-                e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.textShadow = 'none';
-                e.currentTarget.style.boxShadow = 'none';
-              }
-              e.currentTarget.style.transform = '';
-            },
-            onMouseDownCapture: e => {
-              e.currentTarget.style.transform = 'translateY(0) scale(0.94)';
-            },
-            onMouseUp: e => {
-              e.currentTarget.style.transform = 'translateY(-2px) scale(1.04)';
-            },
-            children: [t.nav[key], activeId === id && /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("span", {
-              style: {
-                position: 'absolute',
-                bottom: '3px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: '4px',
-                height: '4px',
-                borderRadius: '50%',
-                background: accent,
-                boxShadow: `0 0 6px rgba(${rgb},0.8)`
-              }
-            }, void 0, false)]
-          }, id, true)), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-            style: {
-              display: 'flex',
-              alignItems: 'center',
-              gap: '2px',
-              background: `rgba(${rgb},0.06)`,
-              border: `1px solid rgba(${rgb},0.12)`,
-              borderRadius: '6px',
-              padding: '3px'
-            },
-            children: ['en', 'es'].map(l => /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("button", {
-              onClick: () => setLang(l),
-              style: {
-                padding: '4px 10px',
-                borderRadius: '4px',
-                border: 'none',
-                cursor: 'pointer',
-                fontFamily: "'JetBrains Mono',monospace",
-                fontSize: '11px',
-                fontWeight: 500,
-                letterSpacing: '1px',
-                textTransform: 'uppercase',
-                transition: 'all 0.2s',
-                background: lang === l ? accent : 'transparent',
-                color: lang === l ? '#020810' : `rgba(${rgb},0.45)`,
-                boxShadow: lang === l ? `0 0 10px rgba(${rgb},0.3)` : 'none'
-              },
-              children: l
-            }, l, false))
-          }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-            style: {
-              position: 'relative',
-              display: 'inline-flex'
-            },
-            children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("a", {
-              href: "#",
-              onClick: e => {
-                e.preventDefault();
-                showCvHint();
-              },
-              onMouseDown: addRipple,
-              style: {
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '6px 14px',
-                borderRadius: '7px',
-                border: `1px solid rgba(${rgb},0.38)`,
-                background: `rgba(${rgb},0.07)`,
-                color: accent,
-                fontFamily: "'IBM Plex Sans',sans-serif",
-                fontWeight: 600,
-                fontSize: '13px',
-                textDecoration: 'none',
-                letterSpacing: '0.3px',
-                transition: 'all 0.22s',
-                position: 'relative',
-                overflow: 'hidden'
-              },
-              onMouseEnter: e => {
-                e.currentTarget.style.background = `rgba(${rgb},0.15)`;
-                e.currentTarget.style.borderColor = `rgba(${rgb},0.65)`;
-                e.currentTarget.style.boxShadow = `0 0 18px rgba(${rgb},0.28)`;
-                e.currentTarget.style.transform = 'translateY(-1px)';
-              },
-              onMouseLeave: e => {
-                e.currentTarget.style.background = `rgba(${rgb},0.07)`;
-                e.currentTarget.style.borderColor = `rgba(${rgb},0.38)`;
-                e.currentTarget.style.boxShadow = 'none';
-                e.currentTarget.style.transform = '';
-              },
-              children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("svg", {
-                width: "12",
-                height: "12",
-                viewBox: "0 0 16 16",
-                fill: "none",
-                stroke: "currentColor",
-                strokeWidth: "1.8",
-                strokeLinecap: "round",
-                strokeLinejoin: "round",
-                children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("path", {
-                  d: "M8 2v8M5 7l3 3 3-3"
-                }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("rect", {
-                  x: "2",
-                  y: "11",
-                  width: "12",
-                  height: "3",
-                  rx: "1"
-                }, void 0, false)]
-              }, void 0, true), "CV"]
-            }, void 0, true), cvHint && /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("span", {
-              style: {
-                position: 'absolute',
-                top: 'calc(100% + 8px)',
-                right: 0,
-                whiteSpace: 'nowrap',
-                fontFamily: "'JetBrains Mono',monospace",
-                fontSize: '10px',
-                padding: '5px 10px',
-                background: 'rgba(4,12,20,0.96)',
-                border: `1px solid rgba(${rgb},0.3)`,
-                borderRadius: '6px',
-                color: accent,
-                letterSpacing: '0.5px',
-                boxShadow: '0 6px 18px rgba(0,0,0,0.4)',
-                animation: 'fadeUp 0.2s ease'
-              },
-              children: t.nav.cvSoon
-            }, void 0, false)]
-          }, void 0, true), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("button", {
-            onClick: () => setMobileOpen(o => !o),
-            "aria-label": mobileOpen ? 'Close menu' : 'Open menu',
-            "aria-expanded": mobileOpen,
-            style: {
-              display: 'none',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '44px',
-              height: '44px',
-              borderRadius: '8px',
-              background: `rgba(${rgb},0.07)`,
-              border: `1px solid rgba(${rgb},0.14)`,
-              color: accent,
-              cursor: 'pointer',
-              transition: 'all 0.2s'
-            },
-            className: "hamburger-btn",
-            children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("svg", {
-              width: "16",
-              height: "16",
-              viewBox: "0 0 16 16",
-              fill: "none",
-              stroke: "currentColor",
-              strokeWidth: "1.8",
-              strokeLinecap: "round",
-              children: mobileOpen ? /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(_jsxDevRuntime.Fragment, {
-                children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("path", {
-                  d: "M2 2l12 12M14 2L2 14"
-                }, void 0, false)
-              }, void 0, false) : /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(_jsxDevRuntime.Fragment, {
-                children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("path", {
-                  d: "M2 4h12M2 8h12M2 12h12"
-                }, void 0, false)
-              }, void 0, false)
-            }, void 0, false)
-          }, void 0, false)]
-        }, void 0, true)]
-      }, void 0, true), mobileOpen && /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-        style: {
-          position: 'fixed',
-          top: '62px',
-          left: 0,
-          right: 0,
-          zIndex: 899,
-          background: 'rgba(5,12,19,0.97)',
-          backdropFilter: 'blur(16px)',
-          borderBottom: `1px solid rgba(${rgb},0.1)`,
-          padding: '16px 24px 20px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '4px',
-          animation: 'fadeUp 0.2s ease'
-        },
-        children: [NAV_ITEMS.map(([id, key]) => /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("a", {
-          href: `#${id}`,
-          onClick: e => {
-            e.preventDefault();
-            scrollTo(id);
-          },
-          style: {
-            fontFamily: "'IBM Plex Sans',sans-serif",
-            fontWeight: activeId === id ? 600 : 500,
-            fontSize: '16px',
-            color: activeId === id ? accent : '#8ab4c6',
-            textDecoration: 'none',
-            padding: '11px 0',
-            borderBottom: `1px solid rgba(${rgb},0.06)`
-          },
-          children: t.nav[key]
-        }, id, false)), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("a", {
-          href: "#",
-          onClick: e => {
-            e.preventDefault();
-            showCvHint();
-          },
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            fontFamily: "'IBM Plex Sans',sans-serif",
-            fontWeight: 600,
-            fontSize: '16px',
-            color: accent,
-            textDecoration: 'none',
-            padding: '11px 0',
-            borderBottom: `1px solid rgba(${rgb},0.06)`
-          },
-          children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("span", {
-            children: "CV"
-          }, void 0, false), cvHint && /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("span", {
-            style: {
-              fontFamily: "'JetBrains Mono',monospace",
-              fontSize: '11px',
-              color: `rgba(${rgb},0.7)`
-            },
-            children: t.nav.cvSoon
-          }, void 0, false)]
-        }, void 0, true), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-          style: {
-            display: 'flex',
-            gap: '10px',
-            marginTop: '12px'
-          },
-          children: ['en', 'es'].map(l => /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("button", {
-            onClick: () => setLang(l),
-            style: {
-              padding: '10px 18px',
-              borderRadius: '5px',
-              border: 'none',
-              cursor: 'pointer',
-              fontFamily: "'JetBrains Mono',monospace",
-              fontSize: '12px',
-              textTransform: 'uppercase',
-              transition: 'all 0.2s',
-              background: lang === l ? accent : `rgba(${rgb},0.08)`,
-              color: lang === l ? '#020810' : `rgba(${rgb},0.5)`
-            },
-            children: l
-          }, l, false))
-        }, void 0, false)]
-      }, void 0, true)]
-    }, void 0, true);
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("nav", {
+      style: {
+        position: 'fixed',
+        top: '2px',
+        left: 0,
+        right: 0,
+        zIndex: 900,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '0 52px',
+        height: '60px',
+        background: scrolled ? 'rgba(5,12,19,0.92)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(16px)' : 'none',
+        borderBottom: scrolled ? `1px solid rgba(${rgb},0.08)` : '1px solid transparent',
+        transition: 'all 0.35s ease'
+      }
+    }, /*#__PURE__*/React.createElement("a", {
+      href: "#hero",
+      onClick: e => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      },
+      style: {
+        fontFamily: "'IBM Plex Sans',sans-serif",
+        fontWeight: 700,
+        fontSize: '22px',
+        color: inHero ? '#e2e8f0' : accent,
+        textDecoration: 'none',
+        letterSpacing: '-0.5px',
+        textShadow: inHero ? `0 0 14px rgba(${rgb},0.5)` : `0 0 20px rgba(${rgb},0.4)`,
+        transition: 'color 0.3s ease, text-shadow 0.3s ease'
+      }
+    }, "SG"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '4px'
+      }
+    }, NAV_ITEMS.map(([id, key]) => /*#__PURE__*/React.createElement("a", {
+      key: id,
+      href: `#${id}`,
+      onMouseDown: addRipple,
+      onClick: e => {
+        e.preventDefault();
+        scrollTo(id);
+      },
+      style: linkStyle(id),
+      onMouseEnter: e => {
+        if (activeId !== id) {
+          e.currentTarget.style.color = accent;
+          e.currentTarget.style.background = `rgba(${rgb},0.08)`;
+          e.currentTarget.style.textShadow = `0 0 12px rgba(${rgb},0.35)`;
+          e.currentTarget.style.boxShadow = `inset 0 0 0 1px rgba(${rgb},0.12)`;
+        }
+        e.currentTarget.style.transform = 'translateY(-2px) scale(1.04)';
+      },
+      onMouseLeave: e => {
+        if (activeId !== id) {
+          e.currentTarget.style.color = '#4a7a92';
+          e.currentTarget.style.background = 'transparent';
+          e.currentTarget.style.textShadow = 'none';
+          e.currentTarget.style.boxShadow = 'none';
+        }
+        e.currentTarget.style.transform = '';
+      },
+      onMouseDownCapture: e => {
+        e.currentTarget.style.transform = 'translateY(0) scale(0.94)';
+      },
+      onMouseUp: e => {
+        e.currentTarget.style.transform = 'translateY(-2px) scale(1.04)';
+      }
+    }, t.nav[key], activeId === id && /*#__PURE__*/React.createElement("span", {
+      style: {
+        position: 'absolute',
+        bottom: '3px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '4px',
+        height: '4px',
+        borderRadius: '50%',
+        background: accent,
+        boxShadow: `0 0 6px rgba(${rgb},0.8)`
+      }
+    }))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '2px',
+        background: `rgba(${rgb},0.06)`,
+        border: `1px solid rgba(${rgb},0.12)`,
+        borderRadius: '6px',
+        padding: '3px'
+      }
+    }, ['en', 'es'].map(l => /*#__PURE__*/React.createElement("button", {
+      key: l,
+      onClick: () => setLang(l),
+      style: {
+        padding: '4px 10px',
+        borderRadius: '4px',
+        border: 'none',
+        cursor: 'pointer',
+        fontFamily: "'JetBrains Mono',monospace",
+        fontSize: '11px',
+        fontWeight: 500,
+        letterSpacing: '1px',
+        textTransform: 'uppercase',
+        transition: 'all 0.2s',
+        background: lang === l ? accent : 'transparent',
+        color: lang === l ? '#020810' : `rgba(${rgb},0.45)`,
+        boxShadow: lang === l ? `0 0 10px rgba(${rgb},0.3)` : 'none'
+      }
+    }, l))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'relative',
+        display: 'inline-flex'
+      }
+    }, /*#__PURE__*/React.createElement("a", {
+      href: "#",
+      onClick: e => {
+        e.preventDefault();
+        showCvHint();
+      },
+      onMouseDown: addRipple,
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '6px',
+        padding: '6px 14px',
+        borderRadius: '7px',
+        border: `1px solid rgba(${rgb},0.38)`,
+        background: `rgba(${rgb},0.07)`,
+        color: accent,
+        fontFamily: "'IBM Plex Sans',sans-serif",
+        fontWeight: 600,
+        fontSize: '13px',
+        textDecoration: 'none',
+        letterSpacing: '0.3px',
+        transition: 'all 0.22s',
+        position: 'relative',
+        overflow: 'hidden'
+      },
+      onMouseEnter: e => {
+        e.currentTarget.style.background = `rgba(${rgb},0.15)`;
+        e.currentTarget.style.borderColor = `rgba(${rgb},0.65)`;
+        e.currentTarget.style.boxShadow = `0 0 18px rgba(${rgb},0.28)`;
+        e.currentTarget.style.transform = 'translateY(-1px)';
+      },
+      onMouseLeave: e => {
+        e.currentTarget.style.background = `rgba(${rgb},0.07)`;
+        e.currentTarget.style.borderColor = `rgba(${rgb},0.38)`;
+        e.currentTarget.style.boxShadow = 'none';
+        e.currentTarget.style.transform = '';
+      }
+    }, /*#__PURE__*/React.createElement("svg", {
+      width: "12",
+      height: "12",
+      viewBox: "0 0 16 16",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "1.8",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M8 2v8M5 7l3 3 3-3"
+    }), /*#__PURE__*/React.createElement("rect", {
+      x: "2",
+      y: "11",
+      width: "12",
+      height: "3",
+      rx: "1"
+    })), "CV"), cvHint && /*#__PURE__*/React.createElement("span", {
+      style: {
+        position: 'absolute',
+        top: 'calc(100% + 8px)',
+        right: 0,
+        whiteSpace: 'nowrap',
+        fontFamily: "'JetBrains Mono',monospace",
+        fontSize: '10px',
+        padding: '5px 10px',
+        background: 'rgba(4,12,20,0.96)',
+        border: `1px solid rgba(${rgb},0.3)`,
+        borderRadius: '6px',
+        color: accent,
+        letterSpacing: '0.5px',
+        boxShadow: '0 6px 18px rgba(0,0,0,0.4)',
+        animation: 'fadeUp 0.2s ease'
+      }
+    }, t.nav.cvSoon)), /*#__PURE__*/React.createElement("button", {
+      onClick: () => setMobileOpen(o => !o),
+      "aria-label": mobileOpen ? 'Close menu' : 'Open menu',
+      "aria-expanded": mobileOpen,
+      style: {
+        display: 'none',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '44px',
+        height: '44px',
+        borderRadius: '8px',
+        background: `rgba(${rgb},0.07)`,
+        border: `1px solid rgba(${rgb},0.14)`,
+        color: accent,
+        cursor: 'pointer',
+        transition: 'all 0.2s'
+      },
+      className: "hamburger-btn"
+    }, /*#__PURE__*/React.createElement("svg", {
+      width: "16",
+      height: "16",
+      viewBox: "0 0 16 16",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "1.8",
+      strokeLinecap: "round"
+    }, mobileOpen ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M2 2l12 12M14 2L2 14"
+    })) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M2 4h12M2 8h12M2 12h12"
+    })))))), mobileOpen && /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'fixed',
+        top: '62px',
+        left: 0,
+        right: 0,
+        zIndex: 899,
+        background: 'rgba(5,12,19,0.97)',
+        backdropFilter: 'blur(16px)',
+        borderBottom: `1px solid rgba(${rgb},0.1)`,
+        padding: '16px 24px 20px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '4px',
+        animation: 'fadeUp 0.2s ease'
+      }
+    }, NAV_ITEMS.map(([id, key]) => /*#__PURE__*/React.createElement("a", {
+      key: id,
+      href: `#${id}`,
+      onClick: e => {
+        e.preventDefault();
+        scrollTo(id);
+      },
+      style: {
+        fontFamily: "'IBM Plex Sans',sans-serif",
+        fontWeight: activeId === id ? 600 : 500,
+        fontSize: '16px',
+        color: activeId === id ? accent : '#8ab4c6',
+        textDecoration: 'none',
+        padding: '11px 0',
+        borderBottom: `1px solid rgba(${rgb},0.06)`
+      }
+    }, t.nav[key])), /*#__PURE__*/React.createElement("a", {
+      href: "#",
+      onClick: e => {
+        e.preventDefault();
+        showCvHint();
+      },
+      style: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        fontFamily: "'IBM Plex Sans',sans-serif",
+        fontWeight: 600,
+        fontSize: '16px',
+        color: accent,
+        textDecoration: 'none',
+        padding: '11px 0',
+        borderBottom: `1px solid rgba(${rgb},0.06)`
+      }
+    }, /*#__PURE__*/React.createElement("span", null, "CV"), cvHint && /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "'JetBrains Mono',monospace",
+        fontSize: '11px',
+        color: `rgba(${rgb},0.7)`
+      }
+    }, t.nav.cvSoon)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        gap: '10px',
+        marginTop: '12px'
+      }
+    }, ['en', 'es'].map(l => /*#__PURE__*/React.createElement("button", {
+      key: l,
+      onClick: () => setLang(l),
+      style: {
+        padding: '10px 18px',
+        borderRadius: '5px',
+        border: 'none',
+        cursor: 'pointer',
+        fontFamily: "'JetBrains Mono',monospace",
+        fontSize: '12px',
+        textTransform: 'uppercase',
+        transition: 'all 0.2s',
+        background: lang === l ? accent : `rgba(${rgb},0.08)`,
+        color: lang === l ? '#020810' : `rgba(${rgb},0.5)`
+      }
+    }, l)))));
   };
 
   // ── Progress bar ───────────────────────────────────────────────────────────────
@@ -1362,7 +1317,7 @@
         if (raf) cancelAnimationFrame(raf);
       };
     }, []);
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/React.createElement("div", {
       style: {
         position: 'fixed',
         top: 0,
@@ -1375,7 +1330,7 @@
         transition: 'width 80ms linear',
         pointerEvents: 'none'
       }
-    }, void 0, false);
+    });
   };
 
   // ── Main App ───────────────────────────────────────────────────────────────────
@@ -1394,59 +1349,51 @@
     }, [lang]);
     const t = TRANS[lang];
     const accent = tweaks.accent;
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(_jsxDevRuntime.Fragment, {
-      children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(LoadingScreen, {
-        onComplete: () => setLoaded(true)
-      }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(ProgressBar, {
-          accent: accent
-        }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(DynamicIsland, {
-          accent: accent
-        }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(Navbar, {
-          t: t,
-          lang: lang,
-          setLang: setLang,
-          accent: accent
-        }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(HeroSection, {
-          t: t,
-          accent: accent,
-          density: tweaks.heroDensity
-        }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(AboutSection, {
-          t: t,
-          accent: accent
-        }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(EducationSection, {
-          t: t,
-          accent: accent
-        }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(ProjectsSection, {
-          t: t,
-          accent: accent
-        }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(ArticlesSection, {
-          t: t,
-          accent: accent
-        }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(ContactSection, {
-          t: t,
-          accent: accent
-        }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(FooterSection, {
-          t: t,
-          accent: accent
-        }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweaksPanel, {
-          children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweakSection, {
-            label: "Accent Color",
-            children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweakColor, {
-              id: "accent",
-              options: ['#00d4ff', '#9b4dff', '#00dc6e']
-            }, void 0, false)
-          }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweakSection, {
-            label: "Hero Style",
-            children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweakRadio, {
-              id: "heroDensity",
-              options: ['compact', 'normal', 'spacious']
-            }, void 0, false)
-          }, void 0, false)]
-        }, void 0, true)]
-      }, void 0, true)]
-    }, void 0, true);
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(LoadingScreen, {
+      onComplete: () => setLoaded(true)
+    }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(ProgressBar, {
+      accent: accent
+    }), /*#__PURE__*/React.createElement(DynamicIsland, {
+      accent: accent
+    }), /*#__PURE__*/React.createElement(Navbar, {
+      t: t,
+      lang: lang,
+      setLang: setLang,
+      accent: accent
+    }), /*#__PURE__*/React.createElement(HeroSection, {
+      t: t,
+      accent: accent,
+      density: tweaks.heroDensity
+    }), /*#__PURE__*/React.createElement(AboutSection, {
+      t: t,
+      accent: accent
+    }), /*#__PURE__*/React.createElement(EducationSection, {
+      t: t,
+      accent: accent
+    }), /*#__PURE__*/React.createElement(ProjectsSection, {
+      t: t,
+      accent: accent
+    }), /*#__PURE__*/React.createElement(ArticlesSection, {
+      t: t,
+      accent: accent
+    }), /*#__PURE__*/React.createElement(ContactSection, {
+      t: t,
+      accent: accent
+    }), /*#__PURE__*/React.createElement(FooterSection, {
+      t: t,
+      accent: accent
+    }), /*#__PURE__*/React.createElement(TweaksPanel, null, /*#__PURE__*/React.createElement(TweakSection, {
+      label: "Accent Color"
+    }, /*#__PURE__*/React.createElement(TweakColor, {
+      id: "accent",
+      options: ['#00d4ff', '#9b4dff', '#00dc6e']
+    })), /*#__PURE__*/React.createElement(TweakSection, {
+      label: "Hero Style"
+    }, /*#__PURE__*/React.createElement(TweakRadio, {
+      id: "heroDensity",
+      options: ['compact', 'normal', 'spacious']
+    })))));
   };
   const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false));
+  root.render(/*#__PURE__*/React.createElement(App, null));
 });

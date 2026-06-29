@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["react/jsx-dev-runtime"], factory);
+    define([], factory);
   } else if (typeof exports !== "undefined") {
-    factory(require("react/jsx-dev-runtime"));
+    factory();
   } else {
     var mod = {
       exports: {}
     };
-    factory(global.jsxDevRuntime);
+    factory();
     global.globe = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_jsxDevRuntime) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function () {
   "use strict";
 
   // globe.jsx — Enhanced 3D globe: city labels, data arcs, layered glow
@@ -438,14 +438,14 @@
     useEffect(() => {
       if (globeRef.current) globeRef.current.setSpeed(speed);
     }, [speed]);
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("canvas", {
+    return /*#__PURE__*/React.createElement("canvas", {
       ref: canvasRef,
       style: {
         width: '100%',
         height: '100%',
         display: 'block'
       }
-    }, void 0, false);
+    });
   });
   Object.assign(window, {
     GlobeCanvas,

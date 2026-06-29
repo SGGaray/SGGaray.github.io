@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["react/jsx-dev-runtime"], factory);
+    define([], factory);
   } else if (typeof exports !== "undefined") {
-    factory(require("react/jsx-dev-runtime"));
+    factory();
   } else {
     var mod = {
       exports: {}
     };
-    factory(global.jsxDevRuntime);
+    factory();
     global.loadingScreen = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_jsxDevRuntime) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function () {
   "use strict";
 
   // loading-screen.jsx v4 — minimal branded loader: SG logo + 600ms progress line.
@@ -52,7 +52,7 @@
       };
     }, []);
     if (!mounted) return null;
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/React.createElement("div", {
       style: {
         position: 'fixed',
         inset: 0,
@@ -65,34 +65,31 @@
         alignItems: 'center',
         justifyContent: 'center',
         gap: '20px'
-      },
-      children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-        style: {
-          fontFamily: "'Syne', sans-serif",
-          fontWeight: 700,
-          fontSize: '3rem',
-          lineHeight: 1,
-          letterSpacing: '-1px',
-          color: '#06b6d4'
-        },
-        children: "SG"
-      }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-        style: {
-          width: '80px',
-          height: '1px',
-          background: 'rgba(255,255,255,0.1)',
-          overflow: 'hidden'
-        },
-        children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-          style: {
-            height: '100%',
-            width: progress + '%',
-            background: 'linear-gradient(90deg, #3b82f6, #06b6d4)',
-            transition: 'width 600ms ease'
-          }
-        }, void 0, false)
-      }, void 0, false)]
-    }, void 0, true);
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'Syne', sans-serif",
+        fontWeight: 700,
+        fontSize: '3rem',
+        lineHeight: 1,
+        letterSpacing: '-1px',
+        color: '#06b6d4'
+      }
+    }, "SG"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: '80px',
+        height: '1px',
+        background: 'rgba(255,255,255,0.1)',
+        overflow: 'hidden'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: '100%',
+        width: progress + '%',
+        background: 'linear-gradient(90deg, #3b82f6, #06b6d4)',
+        transition: 'width 600ms ease'
+      }
+    })));
   };
   window.LoadingScreen = LoadingScreen;
 });

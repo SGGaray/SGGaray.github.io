@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["react/jsx-dev-runtime"], factory);
+    define([], factory);
   } else if (typeof exports !== "undefined") {
-    factory(require("react/jsx-dev-runtime"));
+    factory();
   } else {
     var mod = {
       exports: {}
     };
-    factory(global.jsxDevRuntime);
+    factory();
     global.tweaksPanel = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_jsxDevRuntime) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function () {
   "use strict";
 
   // tweaks-panel.jsx
@@ -318,42 +318,31 @@
       window.addEventListener('mouseup', up);
     };
     if (!open) return null;
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(_jsxDevRuntime.Fragment, {
-      children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("style", {
-        children: __TWEAKS_STYLE
-      }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-        ref: dragRef,
-        className: "twk-panel",
-        "data-noncommentable": "",
-        style: {
-          right: offsetRef.current.x,
-          bottom: offsetRef.current.y
-        },
-        children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-          className: "twk-hd",
-          onMouseDown: onDragStart,
-          children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("b", {
-            children: title
-          }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("button", {
-            className: "twk-x",
-            "aria-label": "Close tweaks",
-            onMouseDown: e => e.stopPropagation(),
-            onClick: dismiss,
-            children: "✕"
-          }, void 0, false)]
-        }, void 0, true), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-          className: "twk-body",
-          children: [children, hasDeckStage && railEnabled && !noDeckControls && /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweakSection, {
-            label: "Deck",
-            children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweakToggle, {
-              label: "Thumbnail rail",
-              value: railVisible,
-              onChange: toggleRail
-            }, void 0, false)
-          }, void 0, false)]
-        }, void 0, true)]
-      }, void 0, true)]
-    }, void 0, true);
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", null, __TWEAKS_STYLE), /*#__PURE__*/React.createElement("div", {
+      ref: dragRef,
+      className: "twk-panel",
+      "data-noncommentable": "",
+      style: {
+        right: offsetRef.current.x,
+        bottom: offsetRef.current.y
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "twk-hd",
+      onMouseDown: onDragStart
+    }, /*#__PURE__*/React.createElement("b", null, title), /*#__PURE__*/React.createElement("button", {
+      className: "twk-x",
+      "aria-label": "Close tweaks",
+      onMouseDown: e => e.stopPropagation(),
+      onClick: dismiss
+    }, "✕")), /*#__PURE__*/React.createElement("div", {
+      className: "twk-body"
+    }, children, hasDeckStage && railEnabled && !noDeckControls && /*#__PURE__*/React.createElement(TweakSection, {
+      label: "Deck"
+    }, /*#__PURE__*/React.createElement(TweakToggle, {
+      label: "Thumbnail rail",
+      value: railVisible,
+      onChange: toggleRail
+    })))));
   }
 
   // ── Layout helpers ──────────────────────────────────────────────────────────
@@ -362,12 +351,9 @@
     label,
     children
   }) {
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(_jsxDevRuntime.Fragment, {
-      children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "twk-sect",
-        children: label
-      }, void 0, false), children]
-    }, void 0, true);
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+      className: "twk-sect"
+    }, label), children);
   }
   function TweakRow({
     label,
@@ -375,18 +361,13 @@
     children,
     inline = false
   }) {
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-      className: inline ? 'twk-row twk-row-h' : 'twk-row',
-      children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "twk-lbl",
-        children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("span", {
-          children: label
-        }, void 0, false), value != null && /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("span", {
-          className: "twk-val",
-          children: value
-        }, void 0, false)]
-      }, void 0, true), children]
-    }, void 0, true);
+    return /*#__PURE__*/React.createElement("div", {
+      className: inline ? 'twk-row twk-row-h' : 'twk-row'
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "twk-lbl"
+    }, /*#__PURE__*/React.createElement("span", null, label), value != null && /*#__PURE__*/React.createElement("span", {
+      className: "twk-val"
+    }, value)), children);
   }
 
   // ── Controls ────────────────────────────────────────────────────────────────
@@ -400,42 +381,36 @@
     unit = '',
     onChange
   }) {
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweakRow, {
+    return /*#__PURE__*/React.createElement(TweakRow, {
       label: label,
-      value: `${value}${unit}`,
-      children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("input", {
-        type: "range",
-        className: "twk-slider",
-        min: min,
-        max: max,
-        step: step,
-        value: value,
-        onChange: e => onChange(Number(e.target.value))
-      }, void 0, false)
-    }, void 0, false);
+      value: `${value}${unit}`
+    }, /*#__PURE__*/React.createElement("input", {
+      type: "range",
+      className: "twk-slider",
+      min: min,
+      max: max,
+      step: step,
+      value: value,
+      onChange: e => onChange(Number(e.target.value))
+    }));
   }
   function TweakToggle({
     label,
     value,
     onChange
   }) {
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-      className: "twk-row twk-row-h",
-      children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "twk-lbl",
-        children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("span", {
-          children: label
-        }, void 0, false)
-      }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("button", {
-        type: "button",
-        className: "twk-toggle",
-        "data-on": value ? '1' : '0',
-        role: "switch",
-        "aria-checked": !!value,
-        onClick: () => onChange(!value),
-        children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("i", {}, void 0, false)
-      }, void 0, false)]
-    }, void 0, true);
+    return /*#__PURE__*/React.createElement("div", {
+      className: "twk-row twk-row-h"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "twk-lbl"
+    }, /*#__PURE__*/React.createElement("span", null, label)), /*#__PURE__*/React.createElement("button", {
+      type: "button",
+      className: "twk-toggle",
+      "data-on": value ? '1' : '0',
+      role: "switch",
+      "aria-checked": !!value,
+      onClick: () => onChange(!value)
+    }, /*#__PURE__*/React.createElement("i", null)));
   }
   function TweakRadio({
     label,
@@ -468,12 +443,12 @@
         const m = options.find(o => String(typeof o === 'object' ? o.value : o) === s);
         return m === undefined ? s : typeof m === 'object' ? m.value : m;
       };
-      return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweakSelect, {
+      return /*#__PURE__*/React.createElement(TweakSelect, {
         label: label,
         value: value,
         options: options,
         onChange: s => onChange(resolve(s))
-      }, void 0, false);
+      });
     }
     const opts = options.map(o => typeof o === 'object' ? o : {
       value: o,
@@ -504,27 +479,25 @@
       window.addEventListener('pointermove', move);
       window.addEventListener('pointerup', up);
     };
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweakRow, {
-      label: label,
-      children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-        ref: trackRef,
-        role: "radiogroup",
-        onPointerDown: onPointerDown,
-        className: dragging ? 'twk-seg dragging' : 'twk-seg',
-        children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-          className: "twk-seg-thumb",
-          style: {
-            left: `calc(2px + ${idx} * (100% - 4px) / ${n})`,
-            width: `calc((100% - 4px) / ${n})`
-          }
-        }, void 0, false), opts.map(o => /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("button", {
-          type: "button",
-          role: "radio",
-          "aria-checked": o.value === value,
-          children: o.label
-        }, o.value, false))]
-      }, void 0, true)
-    }, void 0, false);
+    return /*#__PURE__*/React.createElement(TweakRow, {
+      label: label
+    }, /*#__PURE__*/React.createElement("div", {
+      ref: trackRef,
+      role: "radiogroup",
+      onPointerDown: onPointerDown,
+      className: dragging ? 'twk-seg dragging' : 'twk-seg'
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "twk-seg-thumb",
+      style: {
+        left: `calc(2px + ${idx} * (100% - 4px) / ${n})`,
+        width: `calc((100% - 4px) / ${n})`
+      }
+    }), opts.map(o => /*#__PURE__*/React.createElement("button", {
+      key: o.value,
+      type: "button",
+      role: "radio",
+      "aria-checked": o.value === value
+    }, o.label))));
   }
   function TweakSelect({
     label,
@@ -532,22 +505,20 @@
     options,
     onChange
   }) {
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweakRow, {
-      label: label,
-      children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("select", {
-        className: "twk-field",
-        value: value,
-        onChange: e => onChange(e.target.value),
-        children: options.map(o => {
-          const v = typeof o === 'object' ? o.value : o;
-          const l = typeof o === 'object' ? o.label : o;
-          return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("option", {
-            value: v,
-            children: l
-          }, v, false);
-        })
-      }, void 0, false)
-    }, void 0, false);
+    return /*#__PURE__*/React.createElement(TweakRow, {
+      label: label
+    }, /*#__PURE__*/React.createElement("select", {
+      className: "twk-field",
+      value: value,
+      onChange: e => onChange(e.target.value)
+    }, options.map(o => {
+      const v = typeof o === 'object' ? o.value : o;
+      const l = typeof o === 'object' ? o.label : o;
+      return /*#__PURE__*/React.createElement("option", {
+        key: v,
+        value: v
+      }, l);
+    })));
   }
   function TweakText({
     label,
@@ -555,16 +526,15 @@
     placeholder,
     onChange
   }) {
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweakRow, {
-      label: label,
-      children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("input", {
-        className: "twk-field",
-        type: "text",
-        value: value,
-        placeholder: placeholder,
-        onChange: e => onChange(e.target.value)
-      }, void 0, false)
-    }, void 0, false);
+    return /*#__PURE__*/React.createElement(TweakRow, {
+      label: label
+    }, /*#__PURE__*/React.createElement("input", {
+      className: "twk-field",
+      type: "text",
+      value: value,
+      placeholder: placeholder,
+      onChange: e => onChange(e.target.value)
+    }));
   }
   function TweakNumber({
     label,
@@ -604,24 +574,21 @@
       window.addEventListener('pointermove', move);
       window.addEventListener('pointerup', up);
     };
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-      className: "twk-num",
-      children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("span", {
-        className: "twk-num-lbl",
-        onPointerDown: onScrubStart,
-        children: label
-      }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("input", {
-        type: "number",
-        value: value,
-        min: min,
-        max: max,
-        step: step,
-        onChange: e => onChange(clamp(Number(e.target.value)))
-      }, void 0, false), unit && /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("span", {
-        className: "twk-num-unit",
-        children: unit
-      }, void 0, false)]
-    }, void 0, true);
+    return /*#__PURE__*/React.createElement("div", {
+      className: "twk-num"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "twk-num-lbl",
+      onPointerDown: onScrubStart
+    }, label), /*#__PURE__*/React.createElement("input", {
+      type: "number",
+      value: value,
+      min: min,
+      max: max,
+      step: step,
+      onChange: e => onChange(clamp(Number(e.target.value)))
+    }), unit && /*#__PURE__*/React.createElement("span", {
+      className: "twk-num-unit"
+    }, unit));
   }
 
   // Relative-luminance contrast pick — checkmarks drawn over a swatch need to
@@ -639,18 +606,17 @@
   }
   const __TwkCheck = ({
     light
-  }) => /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("svg", {
+  }) => /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 14 14",
-    "aria-hidden": "true",
-    children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("path", {
-      d: "M3 7.2 5.8 10 11 4.2",
-      fill: "none",
-      strokeWidth: "2.2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      stroke: light ? 'rgba(0,0,0,.78)' : '#fff'
-    }, void 0, false)
-  }, void 0, false);
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M3 7.2 5.8 10 11 4.2",
+    fill: "none",
+    strokeWidth: "2.2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    stroke: light ? 'rgba(0,0,0,.78)' : '#fff'
+  }));
 
   // TweakColor — curated color/palette picker. Each option is either a single
   // hex string or an array of 1-5 hex strings; the card adapts — a lone color
@@ -665,73 +631,65 @@
     onChange
   }) {
     if (!options || !options.length) {
-      return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "twk-row twk-row-h",
-        children: [/*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-          className: "twk-lbl",
-          children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("span", {
-            children: label
-          }, void 0, false)
-        }, void 0, false), /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("input", {
-          type: "color",
-          className: "twk-swatch",
-          value: value,
-          onChange: e => onChange(e.target.value)
-        }, void 0, false)]
-      }, void 0, true);
+      return /*#__PURE__*/React.createElement("div", {
+        className: "twk-row twk-row-h"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "twk-lbl"
+      }, /*#__PURE__*/React.createElement("span", null, label)), /*#__PURE__*/React.createElement("input", {
+        type: "color",
+        className: "twk-swatch",
+        value: value,
+        onChange: e => onChange(e.target.value)
+      }));
     }
     // Native <input type=color> emits lowercase hex per the HTML spec, so
     // compare case-insensitively. String() guards JSON.stringify(undefined),
     // which returns the primitive undefined (no .toLowerCase).
     const key = o => String(JSON.stringify(o)).toLowerCase();
     const cur = key(value);
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(TweakRow, {
-      label: label,
-      children: /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "twk-chips",
-        role: "radiogroup",
-        children: options.map((o, i) => {
-          const colors = Array.isArray(o) ? o : [o];
-          const [hero, ...rest] = colors;
-          const sup = rest.slice(0, 4);
-          const on = key(o) === cur;
-          return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("button", {
-            type: "button",
-            className: "twk-chip",
-            role: "radio",
-            "aria-checked": on,
-            "data-on": on ? '1' : '0',
-            "aria-label": colors.join(', '),
-            title: colors.join(' · '),
-            style: {
-              background: hero
-            },
-            onClick: () => onChange(o),
-            children: [sup.length > 0 && /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("span", {
-              children: sup.map((c, j) => /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("i", {
-                style: {
-                  background: c
-                }
-              }, j, false))
-            }, void 0, false), on && /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)(__TwkCheck, {
-              light: __twkIsLight(hero)
-            }, void 0, false)]
-          }, i, true);
-        })
-      }, void 0, false)
-    }, void 0, false);
+    return /*#__PURE__*/React.createElement(TweakRow, {
+      label: label
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "twk-chips",
+      role: "radiogroup"
+    }, options.map((o, i) => {
+      const colors = Array.isArray(o) ? o : [o];
+      const [hero, ...rest] = colors;
+      const sup = rest.slice(0, 4);
+      const on = key(o) === cur;
+      return /*#__PURE__*/React.createElement("button", {
+        key: i,
+        type: "button",
+        className: "twk-chip",
+        role: "radio",
+        "aria-checked": on,
+        "data-on": on ? '1' : '0',
+        "aria-label": colors.join(', '),
+        title: colors.join(' · '),
+        style: {
+          background: hero
+        },
+        onClick: () => onChange(o)
+      }, sup.length > 0 && /*#__PURE__*/React.createElement("span", null, sup.map((c, j) => /*#__PURE__*/React.createElement("i", {
+        key: j,
+        style: {
+          background: c
+        }
+      }))), on && /*#__PURE__*/React.createElement(__TwkCheck, {
+        light: __twkIsLight(hero)
+      }));
+    })));
   }
   function TweakButton({
     label,
     onClick,
     secondary = false
   }) {
-    return /*#__PURE__*/(0, _jsxDevRuntime.jsxDEV)("button", {
+    return /*#__PURE__*/React.createElement("button", {
       type: "button",
       className: secondary ? 'twk-btn secondary' : 'twk-btn',
-      onClick: onClick,
-      children: label
-    }, void 0, false);
+      onClick: onClick
+    }, label);
   }
   Object.assign(window, {
     useTweaks,
