@@ -1314,12 +1314,7 @@
         position: 'relative',
         zIndex: 2
       }
-    }, /*#__PURE__*/React.createElement(SectionHead, {
-      label: t.about.label,
-      title: t.about.heading,
-      accent: accent,
-      theme: "light"
-    }), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", {
       className: "two-col",
       style: {
         display: 'grid',
@@ -1327,7 +1322,12 @@
         gap: '80px',
         alignItems: 'start'
       }
-    }, /*#__PURE__*/React.createElement("div", null, t.about.bio.map((p, i) => /*#__PURE__*/React.createElement(Reveal, {
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SectionHead, {
+      label: t.about.label,
+      title: t.about.heading,
+      accent: accent,
+      theme: "light"
+    }), t.about.bio.map((p, i) => /*#__PURE__*/React.createElement(Reveal, {
       key: i,
       delay: i * 0.09
     }, /*#__PURE__*/React.createElement("p", {
