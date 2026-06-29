@@ -5,7 +5,7 @@
   "main": "image-slot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel *.jsx --out-dir dist --copy-files && cp *.html *.js *.jpg *.png dist/ 2>/dev/null; cp -r uploads screenshots dist/ 2>/dev/null"
+    "build": "babel *.jsx --out-dir dist --copy-files && cp *.html *.js *.jpg *.png dist/ 2>/dev/null"
   },
   "keywords": [],
   "author": "",
