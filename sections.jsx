@@ -421,14 +421,11 @@ const AboutSection = ({ t, accent }) => {
             {/* Profile photo slot */}
             <Reveal delay={0.1}>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '22px' }}>
-                <image-slot
-                  id="profile-photo"
-                  shape="circle"
-                  placeholder="Drop your profile photo here"
-                  style={{ width: '88px', height: '88px', marginBottom: '10px' }}>
-                </image-slot>
-                <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontWeight: 700, fontSize: '14px', color: '#0d2233' }}>Sebastian Garay</div>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '10px', color: `rgba(${r},0.55)`, letterSpacing: '0.5px', marginTop: '3px' }}>GRC · Behavioral Security</div>
+                <img
+                  src="profile.jpg"
+                  alt="Sebastian Garay"
+                  style={{ width: '88px', height: '88px', marginBottom: '10px', borderRadius: '50%', objectFit: 'cover' }}
+                />
               </div>
             </Reveal>
 
