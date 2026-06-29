@@ -335,7 +335,7 @@ const HeroSection = ({ t, accent = '#06b6d4' }) => {
           </div>
 
           {/* Differentiator line */}
-          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '0.65rem', letterSpacing: '0.1em', color: '#06b6d4', marginTop: '16px', opacity: 0, animation: reduced ? 'none' : 'fadeUp 0.7s ease 0.28s forwards' }}>
+          <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '0.65rem', letterSpacing: '0.1em', color: h, marginTop: '16px', opacity: 0, animation: reduced ? 'none' : 'fadeUp 0.7s ease 0.28s forwards' }}>
             {t.hero.differentiator}
           </div>
 
@@ -418,14 +418,15 @@ const AboutSection = ({ t, accent }) => {
 
           {/* Right: profile photo + mountain + cards */}
           <div>
-            {/* Profile photo slot */}
+            {/* Profile photo */}
             <Reveal delay={0.1}>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '22px' }}>
-                <img
-                  src="profile.jpg"
-                  alt="Sebastian Garay"
-                  style={{ width: '88px', height: '88px', marginBottom: '10px', borderRadius: '50%', objectFit: 'cover' }}
-                />
+                <img src="profile.jpg" alt="Sebastian Garay" loading="lazy"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; const fb = e.currentTarget.nextElementSibling; if (fb) fb.style.display = 'flex'; }}
+                  style={{ width: '88px', height: '88px', borderRadius: '50%', objectFit: 'cover', marginBottom: '10px', border: `1px solid rgba(${r},0.2)`, boxShadow: '0 4px 16px rgba(13,34,51,0.1)' }} />
+                <div aria-hidden="true" style={{ display: 'none', width: '88px', height: '88px', borderRadius: '50%', marginBottom: '10px', alignItems: 'center', justifyContent: 'center', background: `rgba(${r},0.1)`, border: `1px solid rgba(${r},0.22)`, fontFamily: "'Syne',sans-serif", fontWeight: 700, fontSize: '30px', color: a, letterSpacing: '-1px' }}>SG</div>
+                <div style={{ fontFamily: "'IBM Plex Sans',sans-serif", fontWeight: 700, fontSize: '14px', color: '#0d2233' }}>Sebastian Garay</div>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '10px', color: `rgba(${r},0.55)`, letterSpacing: '0.5px', marginTop: '3px' }}>GRC · Behavioral Security</div>
               </div>
             </Reveal>
 
@@ -579,7 +580,7 @@ const EducationSection = ({ t, accent }) => {
         <Reveal delay={0.2}>
           <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '10px', color: `rgba(${r},0.4)`, letterSpacing: '2.5px', textTransform: 'uppercase', margin: '46px 0 18px' }}>{t.education.activitiesLabel}</div>
         </Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(360px,1fr))', gap: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(min(100%,340px),1fr))', gap: '16px' }}>
           {t.education.activities.map((act, i) =>
           <Reveal key={i} delay={0.28 + i * 0.08}>
               <div style={{ background: '#0a1829', border: `1px solid rgba(${r},0.12)`, borderRadius: '12px', padding: '24px 26px' }}>
@@ -704,8 +705,8 @@ const ArticlesSection = ({ t, accent }) => {
 
 
   return (
-    <section id="blog" data-screen-label="05 Articles" style={{ position: 'relative', padding: '120px 0', background: '#f0f5f9', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle,rgba(0,0,0,0.04) 1px,transparent 1px)', backgroundSize: '36px 36px', pointerEvents: 'none', opacity: 0.65 }} />
+    <section id="blog" data-screen-label="05 Articles" style={{ position: 'relative', padding: '120px 0', background: '#f7f9fb', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle,rgba(0,0,0,0.05) 1px,transparent 1px)', backgroundSize: '48px 48px', pointerEvents: 'none', opacity: 0.4 }} />
       <div style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 52px', position: 'relative', zIndex: 2 }}>
         <SectionHead label={t.articles.label} title={t.articles.heading} accent={accent} theme="light" />
 
@@ -718,7 +719,7 @@ const ArticlesSection = ({ t, accent }) => {
         </Reveal>
 
         <CatLabel>{t.articles.cat1Label}</CatLabel>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(340px,1fr))', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(min(100%,340px),1fr))', gap: '24px' }}>
           {t.articles.items.slice(0, 1).map(renderCard)}
         </div>
         <Reveal delay={0.2}>
