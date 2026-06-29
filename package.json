@@ -1,0 +1,18 @@
+{
+  "name": "portfolio2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "image-slot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel *.jsx --out-dir dist --copy-files && cp *.html *.js *.jpg *.png dist/ 2>/dev/null; cp -r uploads screenshots dist/ 2>/dev/null"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^8.0.1",
+    "@babel/core": "^8.0.1",
+    "@babel/preset-react": "^8.0.1"
+  }
+}
