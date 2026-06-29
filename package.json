@@ -5,7 +5,7 @@
   "main": "image-slot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel *.jsx --out-dir dist --copy-files && cp *.html *.js *.jpg *.png dist/ 2>/dev/null"
+    "build": "babel *.jsx --out-dir dist --copy-files && cp index.html cerro-sosneado.jpg og-image.png profile.jpg dist/"
   },
   "keywords": [],
   "author": "",
