@@ -13,6 +13,7 @@
   "devDependencies": {
     "@babel/cli": "^8.0.1",
     "@babel/core": "^8.0.1",
+    "@babel/plugin-transform-modules-umd": "^8.0.1",
     "@babel/preset-react": "^8.0.1"
   }
 }
