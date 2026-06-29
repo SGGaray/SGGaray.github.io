@@ -1368,31 +1368,17 @@
         alignItems: 'center',
         marginBottom: '22px'
       }
-    }, /*#__PURE__*/React.createElement("image-slot", {
-      id: "profile-photo",
-      shape: "circle",
-      placeholder: "Drop your profile photo here",
+    }, /*#__PURE__*/React.createElement("img", {
+      src: "profile.jpg",
+      alt: "Sebastian Garay",
       style: {
         width: '88px',
         height: '88px',
-        marginBottom: '10px'
+        marginBottom: '10px',
+        borderRadius: '50%',
+        objectFit: 'cover'
       }
-    }), /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "'IBM Plex Sans',sans-serif",
-        fontWeight: 700,
-        fontSize: '14px',
-        color: '#0d2233'
-      }
-    }, "Sebastian Garay"), /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "'JetBrains Mono',monospace",
-        fontSize: '10px',
-        color: `rgba(${r},0.55)`,
-        letterSpacing: '0.5px',
-        marginTop: '3px'
-      }
-    }, "GRC · Behavioral Security"))), /*#__PURE__*/React.createElement(Reveal, {
+    }))), /*#__PURE__*/React.createElement(Reveal, {
       delay: 0.2
     }, /*#__PURE__*/React.createElement(MountainPhoto, null)), /*#__PURE__*/React.createElement("div", {
       style: {
