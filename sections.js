@@ -1097,7 +1097,7 @@
         fontFamily: "'JetBrains Mono',monospace",
         fontSize: '0.65rem',
         letterSpacing: '0.1em',
-        color: '#06b6d4',
+        color: h,
         marginTop: '16px',
         opacity: 0,
         animation: reduced ? 'none' : 'fadeUp 0.7s ease 0.28s forwards'
@@ -1371,14 +1371,55 @@
     }, /*#__PURE__*/React.createElement("img", {
       src: "profile.jpg",
       alt: "Sebastian Garay",
+      loading: "lazy",
+      onError: e => {
+        e.currentTarget.style.display = 'none';
+        const fb = e.currentTarget.nextElementSibling;
+        if (fb) fb.style.display = 'flex';
+      },
       style: {
         width: '88px',
         height: '88px',
-        marginBottom: '10px',
         borderRadius: '50%',
-        objectFit: 'cover'
+        objectFit: 'cover',
+        marginBottom: '10px',
+        border: `1px solid rgba(${r},0.2)`,
+        boxShadow: '0 4px 16px rgba(13,34,51,0.1)'
       }
-    }))), /*#__PURE__*/React.createElement(Reveal, {
+    }), /*#__PURE__*/React.createElement("div", {
+      "aria-hidden": "true",
+      style: {
+        display: 'none',
+        width: '88px',
+        height: '88px',
+        borderRadius: '50%',
+        marginBottom: '10px',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: `rgba(${r},0.1)`,
+        border: `1px solid rgba(${r},0.22)`,
+        fontFamily: "'Syne',sans-serif",
+        fontWeight: 700,
+        fontSize: '30px',
+        color: a,
+        letterSpacing: '-1px'
+      }
+    }, "SG"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'IBM Plex Sans',sans-serif",
+        fontWeight: 700,
+        fontSize: '14px',
+        color: '#0d2233'
+      }
+    }, "Sebastian Garay"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'JetBrains Mono',monospace",
+        fontSize: '10px',
+        color: `rgba(${r},0.55)`,
+        letterSpacing: '0.5px',
+        marginTop: '3px'
+      }
+    }, "GRC · Behavioral Security"))), /*#__PURE__*/React.createElement(Reveal, {
       delay: 0.2
     }, /*#__PURE__*/React.createElement(MountainPhoto, null)), /*#__PURE__*/React.createElement("div", {
       style: {
@@ -2022,7 +2063,7 @@
     }, t.education.activitiesLabel)), /*#__PURE__*/React.createElement("div", {
       style: {
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill,minmax(360px,1fr))',
+        gridTemplateColumns: 'repeat(auto-fill,minmax(min(100%,340px),1fr))',
         gap: '16px'
       }
     }, t.education.activities.map((act, i) => /*#__PURE__*/React.createElement(Reveal, {
@@ -2482,17 +2523,17 @@
       style: {
         position: 'relative',
         padding: '120px 0',
-        background: '#f0f5f9',
+        background: '#f7f9fb',
         overflow: 'hidden'
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
         position: 'absolute',
         inset: 0,
-        backgroundImage: 'radial-gradient(circle,rgba(0,0,0,0.04) 1px,transparent 1px)',
-        backgroundSize: '36px 36px',
+        backgroundImage: 'radial-gradient(circle,rgba(0,0,0,0.05) 1px,transparent 1px)',
+        backgroundSize: '48px 48px',
         pointerEvents: 'none',
-        opacity: 0.65
+        opacity: 0.4
       }
     }), /*#__PURE__*/React.createElement("div", {
       style: {
@@ -2544,7 +2585,7 @@
     }, t.articles.comingSoonNote))), /*#__PURE__*/React.createElement(CatLabel, null, t.articles.cat1Label), /*#__PURE__*/React.createElement("div", {
       style: {
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill,minmax(340px,1fr))',
+        gridTemplateColumns: 'repeat(auto-fill,minmax(min(100%,340px),1fr))',
         gap: '24px'
       }
     }, t.articles.items.slice(0, 1).map(renderCard)), /*#__PURE__*/React.createElement(Reveal, {

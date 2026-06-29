@@ -19,15 +19,6 @@
     useEffect,
     useRef
   } = React;
-  const {
-    TweaksPanel,
-    useTweaks,
-    TweakSection,
-    TweakColor,
-    TweakSlider,
-    TweakRadio,
-    TweakToggle
-  } = window;
 
   // ── Translations ───────────────────────────────────────────────────────────────
   const TRANS = {
@@ -50,7 +41,7 @@
         label: 'Cybersecurity Portfolio · 2026',
         firstName: 'Sebastian',
         lastName: 'Garay',
-        title: 'GRC · Human Risk Management · Human Factor Security',
+        title: 'GRC · Human Risk Management',
         tagline: 'Where human behavior meets governance frameworks.',
         headline: 'Turning human behavior into measurable risk controls.',
         scroll: 'Scroll to explore',
@@ -89,7 +80,7 @@
       about: {
         label: 'About Me',
         heading: 'Two disciplines. One purpose.',
-        bio: ['I came to cybersecurity through social psychology. That sequence wasn\'t accidental: before understanding how systems fail, I wanted to understand how people fail. What I found is that in most security incidents and control failures, both happen simultaneously.', 'I study B.Sc. in Cyberdefense at FADENA/UNDEF and a Higher Technical Degree in Social Psychology. Studying group dynamics taught me that miscalibrated trust creates cascading vulnerabilities — in people and organizations alike.', 'Before security, I worked in construction, including team coordination on site. I know what it means to manage real work under pressure, with people dependencies and concrete consequences when something fails.', 'I\'m genuinely concerned about AI adoption without solid risk frameworks. Not as an academic trend — as a practical consequence of watching organizations adopt technology without first understanding what they\'re assuming.', 'Last year I climbed Cerro Sosneado. This year I run my first marathon.'],
+        bio: ['I came to cybersecurity through social psychology. That sequence wasn\'t accidental: before understanding how systems fail, I wanted to understand how people fail. What I found is that in most security incidents and control failures, both happen simultaneously.', 'I\'m studying a B.Sc. in Cyberdefense at FADENA/UNDEF and a Higher Technical Degree in Social Psychology. Studying group dynamics taught me that miscalibrated trust creates cascading vulnerabilities — in people and organizations alike.', 'Before security, I worked in construction, including team coordination on site. I know what it means to manage real work under pressure, with people dependencies and concrete consequences when something fails.', 'I\'m genuinely concerned about AI adoption without solid risk frameworks. Not as an academic trend — as a practical consequence of watching organizations adopt technology without first understanding what they\'re assuming.', 'In 2025 I climbed Cerro Sosneado. This year I\'m running my first marathon.'],
         highlights: [{
           label: 'B.Sc. Cyberdefense',
           sub: 'FADENA / UNDEF · Argentina'
@@ -185,7 +176,7 @@
           category: 'Competition / CTF',
           title: 'Cisco Americas Cyber Games 2026 — CTF',
           date: '30 Jun 2026',
-          status: 'Active participation',
+          status: 'Participated',
           desc: 'Continental-level Capture The Flag competition organized by Cisco. Categories: cryptography, digital forensics, networks, and web vulnerabilities.'
         }]
       },
@@ -315,7 +306,7 @@
         label: 'Portfolio de Ciberseguridad · 2026',
         firstName: 'Sebastian',
         lastName: 'Garay',
-        title: 'GRC · Gestión del Riesgo Humano · Human Factor Security',
+        title: 'GRC · Gestión del Riesgo Humano',
         tagline: 'Donde el comportamiento humano se encuentra con los marcos de gobernanza.',
         headline: 'Convirtiendo el comportamiento humano en controles de riesgo medibles.',
         scroll: 'Scroll para explorar',
@@ -354,7 +345,7 @@
       about: {
         label: 'Sobre Mí',
         heading: 'Dos disciplinas. Un propósito.',
-        bio: ['Llegué a la ciberseguridad desde la psicología social. Esa secuencia no fue accidental: antes de entender cómo fallan los sistemas, quería entender cómo fallan las personas. Lo que descubrí es que en la mayoría de los incidentes de seguridad y fallos de control, ambas cosas ocurren simultáneamente.', 'Estudio Licenciatura en Ciberdefensa en FADENA/UNDEF y Técnico Superior en Psicología Social. Estudiar dinámicas grupales me enseñó que la confianza mal calibrada genera vulnerabilidades en cascada, en personas y organizaciones por igual.', 'Antes de la seguridad, trabajé en construcción, incluyendo coordinación de equipos en obra. Sé lo que significa gestionar trabajo real bajo presión, con dependencias entre personas y consecuencias concretas cuando algo falla.', 'Me preocupa genuinamente la adopción de IA sin marcos de riesgo sólidos. No como tendencia académica, sino como consecuencia práctica de ver organizaciones adoptar tecnología sin entender primero qué están asumiendo.', 'El año pasado subí el Cerro Sosneado. Este año corro mi primera maratón.'],
+        bio: ['Llegué a la ciberseguridad desde la psicología social. Esa secuencia no fue accidental: antes de entender cómo fallan los sistemas, quería entender cómo fallan las personas. Lo que descubrí es que en la mayoría de los incidentes de seguridad y fallos de control, ambas cosas ocurren simultáneamente.', 'Estudio Licenciatura en Ciberdefensa en FADENA/UNDEF y Técnico Superior en Psicología Social. Estudiar dinámicas grupales me enseñó que la confianza mal calibrada genera vulnerabilidades en cascada, en personas y organizaciones por igual.', 'Antes de la seguridad, trabajé en construcción, incluyendo coordinación de equipos en obra. Sé lo que significa gestionar trabajo real bajo presión, con dependencias entre personas y consecuencias concretas cuando algo falla.', 'Me preocupa genuinamente la adopción de IA sin marcos de riesgo sólidos. No como tendencia académica, sino como consecuencia práctica de ver organizaciones adoptar tecnología sin entender primero qué están asumiendo.', 'En 2025 subí el Cerro Sosneado. Este año corro mi primera maratón.'],
         highlights: [{
           label: 'Lic. en Ciberdefensa',
           sub: 'FADENA / UNDEF · Argentina'
@@ -450,7 +441,7 @@
           category: 'Competencia / CTF',
           title: 'Cisco Americas Cyber Games 2026 — CTF',
           date: '30 Jun 2026',
-          status: 'Participación activa',
+          status: 'Participé',
           desc: 'Competencia de Capture The Flag organizada por Cisco a nivel continental. Categorías: criptografía, análisis forense, redes y vulnerabilidades web.'
         }]
       },
@@ -594,302 +585,6 @@
     btn.style.overflow = 'hidden';
     btn.appendChild(el);
     setTimeout(() => el.remove(), 600);
-  };
-
-  // ── CV Modal ──────────────────────────────────────────────────────────────────
-  const CVModal = ({
-    open,
-    onClose,
-    accent
-  }) => {
-    const rgb = window.accentRgb(accent);
-    useEffect(() => {
-      if (!open) return;
-      const onKey = e => {
-        if (e.key === 'Escape') onClose();
-      };
-      window.addEventListener('keydown', onKey);
-      document.body.style.overflow = 'hidden';
-      return () => {
-        window.removeEventListener('keydown', onKey);
-        document.body.style.overflow = '';
-      };
-    }, [open, onClose]);
-    if (!open) return null;
-    return /*#__PURE__*/React.createElement("div", {
-      onClick: onClose,
-      style: {
-        position: 'fixed',
-        inset: 0,
-        zIndex: 9800,
-        background: 'rgba(2,8,16,0.82)',
-        backdropFilter: 'blur(10px)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '24px'
-      }
-    }, /*#__PURE__*/React.createElement("div", {
-      onClick: e => e.stopPropagation(),
-      style: {
-        background: '#0a1829',
-        border: `1px solid rgba(${rgb},0.18)`,
-        borderRadius: '16px',
-        width: 'min(680px,95vw)',
-        maxHeight: '88vh',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        boxShadow: `0 32px 80px rgba(0,0,0,0.6), 0 0 40px rgba(${rgb},0.06)`,
-        animation: 'fadeUp 0.28s ease'
-      }
-    }, /*#__PURE__*/React.createElement("div", {
-      style: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '20px 28px',
-        borderBottom: `1px solid rgba(${rgb},0.09)`
-      }
-    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "'IBM Plex Sans',sans-serif",
-        fontWeight: 700,
-        fontSize: '17px',
-        color: '#daeef8'
-      }
-    }, "Curriculum Vitae"), /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "'JetBrains Mono',monospace",
-        fontSize: '9px',
-        color: `rgba(${rgb},0.35)`,
-        letterSpacing: '1.2px',
-        marginTop: '3px',
-        padding: '3px 8px',
-        background: `rgba(${rgb},0.06)`,
-        border: `1px solid rgba(${rgb},0.14)`,
-        borderRadius: '4px',
-        display: 'inline-block'
-      }
-    }, "To enable PDF download: add your CV file as ", /*#__PURE__*/React.createElement("code", {
-      style: {
-        color: accent
-      }
-    }, "CV_Sebastian_Garay.pdf"), " to the project root"), /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "'JetBrains Mono',monospace",
-        fontSize: '10px',
-        color: `rgba(${rgb},0.4)`,
-        letterSpacing: '1.5px',
-        marginTop: '3px'
-      }
-    }, "Sebastian Garay · GRC & Behavioral Security")), /*#__PURE__*/React.createElement("button", {
-      onClick: onClose,
-      style: {
-        width: '32px',
-        height: '32px',
-        borderRadius: '8px',
-        background: `rgba(${rgb},0.07)`,
-        border: `1px solid rgba(${rgb},0.14)`,
-        color: `rgba(${rgb},0.6)`,
-        cursor: 'pointer',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        transition: 'all 0.2s'
-      },
-      onMouseEnter: e => {
-        e.currentTarget.style.background = `rgba(${rgb},0.14)`;
-        e.currentTarget.style.color = accent;
-      },
-      onMouseLeave: e => {
-        e.currentTarget.style.background = `rgba(${rgb},0.07)`;
-        e.currentTarget.style.color = `rgba(${rgb},0.6)`;
-      }
-    }, /*#__PURE__*/React.createElement("svg", {
-      width: "14",
-      height: "14",
-      viewBox: "0 0 16 16",
-      fill: "none",
-      stroke: "currentColor",
-      strokeWidth: "2",
-      strokeLinecap: "round"
-    }, /*#__PURE__*/React.createElement("path", {
-      d: "M2 2l12 12M14 2L2 14"
-    })))), /*#__PURE__*/React.createElement("div", {
-      style: {
-        flexGrow: 1,
-        overflowY: 'auto',
-        padding: '28px',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '20px'
-      }
-    }, /*#__PURE__*/React.createElement("div", {
-      style: {
-        padding: '24px',
-        background: '#071018',
-        borderRadius: '10px',
-        border: `1px solid rgba(${rgb},0.08)`
-      }
-    }, /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "'Syne',sans-serif",
-        fontWeight: 700,
-        fontSize: '26px',
-        color: '#eaf6fb',
-        marginBottom: '6px'
-      }
-    }, "Sebastian Garay"), /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "'JetBrains Mono',monospace",
-        fontSize: '11px',
-        color: accent,
-        letterSpacing: '2px',
-        textTransform: 'uppercase',
-        marginBottom: '14px'
-      }
-    }, "GRC & Behavioral Security Specialist"), /*#__PURE__*/React.createElement("div", {
-      style: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '16px'
-      }
-    }, ['Buenos Aires, Argentina · AMBA', 'linkedin.com/in/sebastian-garay', 'credly.com/users/sebastian-garay.tech'].map(c => /*#__PURE__*/React.createElement("span", {
-      key: c,
-      style: {
-        fontFamily: "'IBM Plex Sans',sans-serif",
-        fontSize: '13px',
-        color: '#4a7a92'
-      }
-    }, c)))), [{
-      title: 'Education',
-      items: ['B.Sc. Cyberdefense — FADENA/UNDEF (In Progress)', 'Higher Technical Degree in Social Psychology (In Progress)']
-    }, {
-      title: 'Certifications',
-      items: ['Ethical Hacker — Cisco (Jun 2026)', 'Cybersecurity Certificate — IBM SkillsBuild', 'GRC & Data Privacy · Cloud Security · Incident Response · Vulnerability Mgmt']
-    }, {
-      title: 'Expertise',
-      items: ['Governance, Risk & Compliance (GRC)', 'ISO 27001 · COBIT 2019', 'Behavioral Security · AI Risk Governance', 'Risk Assessment & Gap Analysis']
-    }].map(s => /*#__PURE__*/React.createElement("div", {
-      key: s.title,
-      style: {
-        padding: '20px 24px',
-        background: '#071018',
-        borderRadius: '10px',
-        border: `1px solid rgba(${rgb},0.07)`
-      }
-    }, /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "'JetBrains Mono',monospace",
-        fontSize: '9px',
-        color: `rgba(${rgb},0.4)`,
-        letterSpacing: '2.5px',
-        textTransform: 'uppercase',
-        marginBottom: '12px'
-      }
-    }, s.title), s.items.map(item => /*#__PURE__*/React.createElement("div", {
-      key: item,
-      style: {
-        fontFamily: "'IBM Plex Sans',sans-serif",
-        fontSize: '14px',
-        color: '#7aafc8',
-        marginBottom: '6px',
-        paddingLeft: '12px',
-        borderLeft: `2px solid rgba(${rgb},0.15)`
-      }
-    }, item)))), /*#__PURE__*/React.createElement("div", {
-      style: {
-        padding: '16px 24px',
-        background: `rgba(${rgb},0.04)`,
-        borderRadius: '10px',
-        border: `1px dashed rgba(${rgb},0.15)`,
-        textAlign: 'center'
-      }
-    }, /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontFamily: "'JetBrains Mono',monospace",
-        fontSize: '11px',
-        color: `rgba(${rgb},0.35)`,
-        letterSpacing: '1px'
-      }
-    }, "Full CV available as PDF — add your file to enable download"))), /*#__PURE__*/React.createElement("div", {
-      style: {
-        padding: '18px 28px',
-        borderTop: `1px solid rgba(${rgb},0.09)`,
-        display: 'flex',
-        gap: '12px',
-        justifyContent: 'flex-end'
-      }
-    }, /*#__PURE__*/React.createElement("button", {
-      onClick: onClose,
-      style: {
-        padding: '10px 20px',
-        background: 'transparent',
-        border: `1px solid rgba(${rgb},0.18)`,
-        borderRadius: '7px',
-        color: `rgba(${rgb},0.55)`,
-        fontFamily: "'IBM Plex Sans',sans-serif",
-        fontWeight: 600,
-        fontSize: '13px',
-        cursor: 'pointer',
-        transition: 'all 0.2s'
-      },
-      onMouseEnter: e => {
-        e.currentTarget.style.borderColor = `rgba(${rgb},0.35)`;
-        e.currentTarget.style.color = accent;
-      },
-      onMouseLeave: e => {
-        e.currentTarget.style.borderColor = `rgba(${rgb},0.18)`;
-        e.currentTarget.style.color = `rgba(${rgb},0.55)`;
-      },
-      onMouseDown: addRipple
-    }, "Cerrar"), /*#__PURE__*/React.createElement("a", {
-      href: "CV_Sebastian_Garay.pdf",
-      download: true,
-      style: {
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '8px',
-        padding: '10px 22px',
-        background: accent,
-        color: '#020810',
-        fontFamily: "'IBM Plex Sans',sans-serif",
-        fontWeight: 700,
-        fontSize: '13px',
-        borderRadius: '7px',
-        textDecoration: 'none',
-        boxShadow: `0 0 18px rgba(${rgb},0.3)`,
-        transition: 'all 0.2s',
-        position: 'relative',
-        overflow: 'hidden'
-      },
-      onMouseEnter: e => {
-        e.currentTarget.style.boxShadow = `0 0 28px rgba(${rgb},0.5)`;
-        e.currentTarget.style.transform = 'translateY(-1px)';
-      },
-      onMouseLeave: e => {
-        e.currentTarget.style.boxShadow = `0 0 18px rgba(${rgb},0.3)`;
-        e.currentTarget.style.transform = '';
-      },
-      onMouseDown: addRipple
-    }, /*#__PURE__*/React.createElement("svg", {
-      width: "12",
-      height: "12",
-      viewBox: "0 0 16 16",
-      fill: "none",
-      stroke: "currentColor",
-      strokeWidth: "2.2",
-      strokeLinecap: "round"
-    }, /*#__PURE__*/React.createElement("path", {
-      d: "M8 2v8M5 7l3 3 3-3"
-    }), /*#__PURE__*/React.createElement("rect", {
-      x: "2",
-      y: "11",
-      width: "12",
-      height: "3",
-      rx: "1"
-    })), "Descargar PDF"))));
   };
 
   // ── Navbar ─────────────────────────────────────────────────────────────────────
@@ -1334,23 +1029,18 @@
   };
 
   // ── Main App ───────────────────────────────────────────────────────────────────
-  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-    "accent": "#00d4ff",
-    "heroDensity": "normal",
-    "bgVariant": "dark"
-  } /*EDITMODE-END*/;
+  // Brand accent is fixed for the production portfolio.
+  const ACCENT = '#00d4ff';
   const App = () => {
-    const [lang, setLang] = useState(() => localStorage.getItem('sg_lang') || 'es');
-    const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
-    const [loaded, setLoaded] = useState(false);
+    const [lang, setLang] = useState(() => localStorage.getItem('sg_lang') || 'en');
     useEffect(() => {
       localStorage.setItem('sg_lang', lang);
       document.documentElement.lang = lang;
     }, [lang]);
     const t = TRANS[lang];
-    const accent = tweaks.accent;
+    const accent = ACCENT;
     return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(LoadingScreen, {
-      onComplete: () => setLoaded(true)
+      onComplete: () => {}
     }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(ProgressBar, {
       accent: accent
     }), /*#__PURE__*/React.createElement(DynamicIsland, {
@@ -1362,8 +1052,7 @@
       accent: accent
     }), /*#__PURE__*/React.createElement(HeroSection, {
       t: t,
-      accent: accent,
-      density: tweaks.heroDensity
+      accent: accent
     }), /*#__PURE__*/React.createElement(AboutSection, {
       t: t,
       accent: accent
@@ -1382,17 +1071,7 @@
     }), /*#__PURE__*/React.createElement(FooterSection, {
       t: t,
       accent: accent
-    }), /*#__PURE__*/React.createElement(TweaksPanel, null, /*#__PURE__*/React.createElement(TweakSection, {
-      label: "Accent Color"
-    }, /*#__PURE__*/React.createElement(TweakColor, {
-      id: "accent",
-      options: ['#00d4ff', '#9b4dff', '#00dc6e']
-    })), /*#__PURE__*/React.createElement(TweakSection, {
-      label: "Hero Style"
-    }, /*#__PURE__*/React.createElement(TweakRadio, {
-      id: "heroDensity",
-      options: ['compact', 'normal', 'spacious']
-    })))));
+    })));
   };
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(/*#__PURE__*/React.createElement(App, null));

@@ -303,42 +303,6 @@
       }
     }, s.label)))));
   };
-  const FrameworkTag = ({
-    name,
-    sub,
-    accent = '#00d4ff',
-    opacity = 0.1,
-    style = {}
-  }) => {
-    const [ref, visible] = useInView(0.1);
-    const rgb = accentRgb(accent);
-    return /*#__PURE__*/React.createElement("div", {
-      ref: ref,
-      style: {
-        position: 'absolute',
-        opacity: visible ? opacity : 0,
-        transition: 'opacity 1s ease',
-        border: `1px solid rgba(${rgb},0.2)`,
-        borderRadius: '6px',
-        padding: '8px 14px',
-        fontFamily: 'monospace',
-        ...style
-      }
-    }, /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontSize: '10px',
-        color: `rgba(${rgb},0.5)`,
-        letterSpacing: '1.5px',
-        textTransform: 'uppercase'
-      }
-    }, name), sub && /*#__PURE__*/React.createElement("div", {
-      style: {
-        fontSize: '8px',
-        color: `rgba(${rgb},0.22)`,
-        marginTop: '2px'
-      }
-    }, sub));
-  };
   let hexIdCounter = 0;
   const HexGridBg = ({
     accent = '#00d4ff',
@@ -378,7 +342,6 @@
     RiskMatrix,
     ComplianceRing,
     AuditTrail,
-    FrameworkTag,
     HexGridBg
   };
 });
