@@ -5,3 +5,5 @@ dist/
 screenshots/
 uploads/
 portfolio-print*.html
+.image-slots.state.json
+.thumbnail
